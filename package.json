@@ -1,0 +1,59 @@
+{
+  "name": "ssy-webpack",
+  "version": "1.0.0",
+  "description": "webpack configs just for myself",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack-dev-server --config scripts/webpack.dev.conf.js",
+    "start": "npm run dev",
+    "build": "webpack --config scripts/webpack.pro.conf",
+    "lint": "eslint --ext .js src --fix"
+  },
+  "keywords": [
+    "webpack",
+    "ssy-webpack"
+  ],
+  "author": "shangyy",
+  "homepage": "https://github.com/shangyueyue/ssy-webpack",
+  "repository": "https://github.com/shangyueyue/ssy-webpack",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/core": "^7.4.5",
+    "webpack": "^4.32.2",
+    "webpack-merge": "^4.2.1",
+    "clean-webpack-plugin": "^3.0.0",
+    "html-webpack-plugin": "^3.2.0"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-export-default-from": "^7.2.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/types": "^7.4.4",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^2.1.1",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.17.3",
+    "husky": "^2.3.0",
+    "less": "^3.9.0",
+    "less-loader": "^5.0.0",
+    "style-loader": "^0.23.1",
+    "url-loader": "^1.1.2",
+    "webpack": "^4.32.2",
+    "webpack-bundle-analyzer": "^3.3.2",
+    "webpack-cli": "^3.3.2",
+    "webpack-dev-server": "^3.5.1",
+    "webpack-merge": "^4.2.1"
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "npm run lint",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
+}
